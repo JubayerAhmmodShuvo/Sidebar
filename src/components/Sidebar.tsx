@@ -26,7 +26,7 @@ export default function Sidebar() {
     <>
       <button
         onClick={toggleSidebar}
-        className="lg:hidden fixed top-4 left-4 z-20 p-2 rounded-lg bg-primary-light dark:bg-primary-dark hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg transition-colors"
         aria-label="Toggle Sidebar"
       >
         <svg
@@ -45,14 +45,14 @@ export default function Sidebar() {
       </button>
 
       <div
-        className={`fixed inset-y-0 left-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:static lg:inset-0 transition duration-200 ease-in-out z-10 w-64 bg-background-light dark:bg-background-dark border-r border-accent-light dark:border-accent-dark p-4 flex flex-col`}
+        className={`fixed inset-y-0 left-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:static lg:inset-0 transition duration-200 ease-in-out z-30 w-64 bg-blue-100 text-black   p-4 flex flex-col shadow-lg`}
       >
-        <div className="flex-1 space-y-4">
+        <div className="flex-1 space-y-1">
           {menuItems.map((item) => (
             <div key={item.title} className="space-y-2">
               <button
                 onClick={() => toggleDropdown(item.title)}
-                className="w-full flex items-center justify-between px-4 py-2 text-foreground-light dark:text-foreground-dark hover:bg-primary-light dark:hover:bg-primary-dark rounded-lg transition-colors"
+                className="w-full flex items-center justify-between px-4 mt-14  text-foreground-light dark:text-foreground-dark hover:bg-primary-light dark:hover:bg-primary-dark rounded-lg transition-colors"
               >
                 <div className="flex items-center space-x-3">
                   {item.icon && (
