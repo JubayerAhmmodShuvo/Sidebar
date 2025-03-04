@@ -1,7 +1,7 @@
 export default function DocumentsPage() {
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Documents</h1>
+      <h1 className="text-2xl font-bold mb-4 ">Documents</h1>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
         <p className="text-gray-600 dark:text-gray-300">Access and manage your important documents. This page shows all your stored documents and files.</p>
         <div className="mt-4 space-y-4">

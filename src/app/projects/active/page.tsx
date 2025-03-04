@@ -1,7 +1,7 @@
 export default function ActiveProjectsPage() {
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Active Projects</h1>
+      <h1 className="text-2xl font-bold mb-4 ">Active Projects</h1>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
         <p className="text-gray-600 dark:text-gray-300">View and manage your currently active projects. These are the projects that are currently in progress or in the planning phase.</p>
         <div className="mt-4 space-y-4">

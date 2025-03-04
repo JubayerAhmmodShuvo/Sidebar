@@ -1,7 +1,7 @@
 export default function AllProjectsPage() {
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">All Projects</h1>
+      <h1 className="text-2xl font-bold mb-4 ">All Projects</h1>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
         <p className="text-gray-600 dark:text-gray-300">Here you can view and manage all your projects. This page provides an overview of both active and completed projects.</p>
         <div className="mt-4 space-y-4">

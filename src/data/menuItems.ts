@@ -1,4 +1,4 @@
-import { StaticImageData } from 'next/image';
+// menuItems.ts */
 
 type MenuItem = {
   title: string;
