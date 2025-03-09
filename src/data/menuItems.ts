@@ -10,17 +10,18 @@ type MenuItem = {
 };
 
 export const menuItems: MenuItem[] = [
+ 
   {
     title: 'Dashboard',
     icon: '/globe.svg',
     items: [
       {
         title: 'Analytics',
-        href: '/dashboard/analytics'
+        href: '/sidebar/dashboard/analytics'
       },
       {
         title: 'Overview',
-        href: '/dashboard/overview'
+        href: '/sidebar//dashboard/overview'
       }
     ]
   },
@@ -30,11 +31,11 @@ export const menuItems: MenuItem[] = [
     items: [
       {
         title: 'All Projects',
-        href: '/projects/all'
+        href: '/sidebar//projects/all'
       },
       {
         title: 'Active',
-        href: '/projects/active'
+        href: '/sidebar//projects/active'
       }
     ]
   },
@@ -44,11 +45,11 @@ export const menuItems: MenuItem[] = [
     items: [
       {
         title: 'Documents',
-        href: '/files/documents'
+        href: '/sidebar//files/documents'
       },
       {
         title: 'Media',
-        href: '/files/media'
+        href: '/sidebar//files/media'
       }
     ]
   }

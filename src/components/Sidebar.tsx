@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from '../context/ThemeContext';
@@ -10,6 +10,26 @@ export default function Sidebar() {
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({});
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target as Node) &&
+        toggleButtonRef.current &&
+        !toggleButtonRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const toggleDropdown = (title: string) => {
     setOpenItems((prev) => ({
@@ -25,12 +45,13 @@ export default function Sidebar() {
   return (
     <>
       <button
+        ref={toggleButtonRef}
         onClick={toggleSidebar}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg transition-colors"
+        className="lg:hidden fixed top-2 left-4 z-50 p-2 rounded-lg transition-colors bg-blue-100 dark:bg-gray-800"
         aria-label="Toggle Sidebar"
       >
         <svg
-          className="w-6 h-6 text-foreground-light dark:text-foreground-dark"
+          className="w-7 h-7 text-white"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -45,9 +66,11 @@ export default function Sidebar() {
       </button>
 
       <div
-        className={`fixed inset-y-0 left-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:static lg:inset-0 transition duration-200 ease-in-out z-30 w-64 bg-blue-100 text-black   p-4 flex flex-col shadow-lg`}
+        ref={sidebarRef}
+        className={`fixed inset-y-0 left-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:static lg:inset-0 transition duration-200 ease-in-out z-20 w-64 bg-blue-100 text-black p-4 flex flex-col shadow-lg mt-16 lg:mt-16`}
       >
         <div className="flex-1 space-y-1">
+         <Link href="/sidebar"> <h5 className='text-center font-bold text-3xl ' >SideBar</h5></Link>
           {menuItems.map((item) => (
             <div key={item.title} className="space-y-2">
               <button
