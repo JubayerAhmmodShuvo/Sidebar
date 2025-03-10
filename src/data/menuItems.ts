@@ -21,7 +21,7 @@ export const menuItems: MenuItem[] = [
       },
       {
         title: 'Overview',
-        href: '/sidebar//dashboard/overview'
+        href: '/sidebar/dashboard/overview'
       }
     ]
   },
@@ -31,11 +31,11 @@ export const menuItems: MenuItem[] = [
     items: [
       {
         title: 'All Projects',
-        href: '/sidebar//projects/all'
+        href: '/sidebar/projects/all'
       },
       {
         title: 'Active',
-        href: '/sidebar//projects/active'
+        href: '/sidebar/projects/active'
       }
     ]
   },
@@ -45,11 +45,11 @@ export const menuItems: MenuItem[] = [
     items: [
       {
         title: 'Documents',
-        href: '/sidebar//files/documents'
+        href: '/sidebar/files/documents'
       },
       {
         title: 'Media',
-        href: '/sidebar//files/media'
+        href: '/sidebar/files/media'
       }
     ]
   }
